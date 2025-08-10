@@ -36,8 +36,9 @@ jobs:
       - name: Build Docker image
         run: docker build -t s3-uploader .
 
-      - name: Upload file via Docker container
-        run: docker run --rm \
-              -v ${{ github.workspace }}/terraform:/terraform \
-              -v ${{ github.workspace }}/test.txt:/test.txt \
-              s3-uploader /test.txt
+      - name: Run S3 uploader
+        run: |
+          docker run --rm \
+            -v /home/runner/work/Infra_Terraform_GitHub-Actions/Infra_Terraform_GitHub-Actions/terraform:/terraform \
+            -v /home/runner/work/Infra_Terraform_GitHub-Actions/Infra_Terraform_GitHub-Actions/test.txt:/test.txt \
+            s3-uploader /test.txt
