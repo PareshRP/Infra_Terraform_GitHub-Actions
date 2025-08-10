@@ -40,4 +40,4 @@ jobs:
         run: docker run --rm \
               -v ${{ github.workspace }}/terraform:/terraform \
               -v ${{ github.workspace }}/test.txt:/test.txt \
-              s3-uploader terraform /test.txt
+              s3-uploader /test.txt
