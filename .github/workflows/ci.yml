@@ -41,4 +41,4 @@ jobs:
           docker run --rm \
             -v /home/runner/work/Infra_Terraform_GitHub-Actions/Infra_Terraform_GitHub-Actions/terraform:/terraform \
             -v /home/runner/work/Infra_Terraform_GitHub-Actions/Infra_Terraform_GitHub-Actions/test.txt:/test.txt \
-            s3-uploader /test.txt
+            s3-uploader upload-file /test.txt
