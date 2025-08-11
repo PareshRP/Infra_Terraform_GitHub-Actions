@@ -39,7 +39,5 @@ jobs:
       - name: Run S3 uploader
         run: |
           docker run --rm \
-            -v /home/runner/work/Infra_Terraform_GitHub-Actions/Infra_Terraform_GitHub-Actions/terraform:/terraform \
             -v /home/runner/work/Infra_Terraform_GitHub-Actions/Infra_Terraform_GitHub-Actions/test.txt:/test.txt \
-            --entrypoint s3-uploader \
-            s3-uploader upload-file /test.txt
+            s3-uploader /test.txt
